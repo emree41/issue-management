@@ -1,7 +1,7 @@
 export class Page {
 
   constructor() {
-    this.page= 0;
+    this.number= 0;
     this.size = 10;
   }
 
@@ -12,5 +12,5 @@ export class Page {
   //The total number of pages
   totalPages: number = 0;
   //The current page number
-  page: number = 0;
+  number: number = 0;
 }
