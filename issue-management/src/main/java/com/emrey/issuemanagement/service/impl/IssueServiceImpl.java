@@ -9,7 +9,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.emrey.issuemanagement.dto.IssueDto;
+import com.emrey.issuemanagement.dto.ProjectDto;
 import com.emrey.issuemanagement.entity.Issue;
+import com.emrey.issuemanagement.entity.Project;
 import com.emrey.issuemanagement.repository.IssueRepository;
 import com.emrey.issuemanagement.service.IssueService;
 import com.emrey.issuemanagement.utils.TPage;
@@ -54,10 +56,14 @@ public class IssueServiceImpl implements IssueService{
 		page.setStat(data, Arrays.asList(dtos));
 		return page;
 	}
+	
+	public Boolean delete(Long issueId) {
+		issueRepository.deleteById(issueId);
+		return true;
+	}
 
 	@Override
-	public Boolean delete(IssueDto issue) {
-		// TODO Auto-generated method stub
+	public IssueDto update(Long id, IssueDto issue) {
 		return null;
 	}
 	

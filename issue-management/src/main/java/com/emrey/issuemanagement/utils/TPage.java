@@ -5,6 +5,14 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 
+import com.emrey.issuemanagement.entity.Project;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class TPage<T> {
 	private int number;
 	private int size;
@@ -13,7 +21,7 @@ public class TPage<T> {
 	private Long totalElements;
 	private List<T> content;
 	
-	public void setStat(Page<T> page, List<T> list) {
+	public void setStat(Page<Project> page, List<T> list) {
 		this.number = page.getNumber();
 		this.size = page.getSize();
 		this.sort = page.getSort();

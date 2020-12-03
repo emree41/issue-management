@@ -5,22 +5,26 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import com.emrey.issuemanagement.dto.ProjectDto;
 import com.emrey.issuemanagement.entity.Issue;
 import com.emrey.issuemanagement.entity.Project;
 import com.emrey.issuemanagement.entity.User;
+import com.emrey.issuemanagement.utils.TPage;
 
 public interface ProjectService {
 	
-	Project save(Project project);
+	ProjectDto save(ProjectDto project);
 	
-	Project getById(Long id);
+	ProjectDto getById(Long id);
 	
-	Page<Project> getAllPageable(Pageable pageable);
+	TPage<ProjectDto> getAllPageable(Pageable pageable);
 	
-	List<Project> getByProjectCode(String projectCode);
+	ProjectDto getByProjectCode(String projectCode);
 	
-	List<Project> getByProjectCodeContains(String projectCode);
+	List<ProjectDto> getByProjectCodeContains(String projectCode);
 	
-	Boolean delete(Project project);
+	Boolean delete(ProjectDto project);
+	
+	ProjectDto update(Long id, ProjectDto project);
 	
 }
